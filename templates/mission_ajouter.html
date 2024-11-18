@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="mb-4 pd-md--0 mb-md-5 px-md-2 text-center">Ajouter une mission</h2>
+                        <form method="POST" action="/addmission">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="nom">Nom :</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Saisir le nom de la personne qui va s'occupe de la tâche" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tache_a_faire">Tâche à faire :</label>
+                                    <input type="text" class="form-control" id="tache_a_faire" name="tache_a_faire" placeholder="Saisir la tâche à faire" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Date :</label>
+                                    <input type="date" class="form-control" id="date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="statut_de_projet">Statut du projet :</label>
+                                    <select class="form-control" id="statut_de_projet" name="statut_de_projet" required>
+                                        <option value="" disabled selected>Selectionne ton statut</option>
+                                        <option value="Fait">Fait</option>
+                                        <option value="En cours">En cours</option>
+                                        <option value="Pas fait">Pas fait</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="financement">Financement :</label>
+                                    <select class="form-control" id="financement" name="financement" required>
+                                        <option value="" disabled selected>Selectionne ton statut de financement</option>
+                                        <option value="Financé">Financé</option>
+                                        <option value="Pas financé">Pas financé</option>
+                                    </select>
+                                </div>                                
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ url_for('main.mission') }}" class="btn btn-secondary text-white text-decoration-none">Retourner</a>
+                                <button type="submit" class="btn btn-success">Ajouter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
